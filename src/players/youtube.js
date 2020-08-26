@@ -1,6 +1,8 @@
 import YoutubePlayer from 'youtube-player';
 import { UNSTARTED, ENDED, PLAYING, PAUSED, BUFFERING, CUED } from '../constants/youtubeStates';
 
+let videoCount = 0;
+
 export default {
   name: 'YoutubePlayer',
   props: {
@@ -35,6 +37,8 @@ export default {
     }
   },
   data () {
+    videoCount += 1;
+
     return {
       player: {},
       events: {
@@ -45,7 +49,8 @@ export default {
         [BUFFERING]: 'buffering',
         [CUED]: 'cued'
       },
-      resizeTimeout: null
+      resizeTimeout: null,
+      htmlId: `embed-youtube-video-${videoCount}`,
     }
   },
   computed: {
@@ -151,6 +156,6 @@ export default {
     }
   },
   render (h) {
-    return h('div')
+    return h('div', { attrs: { id: this.htmlId } });
   }
 }
