@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "A Vue.js component to wrap embed iframes from Vimeo and Youtube.",
   "main": "dist/v-video-wrapper.js",
-  "private": true,
   "keywords": [
     "Vue",
     "vue.js",
