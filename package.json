@@ -5,11 +5,13 @@
   "private": true,
   "keywords": [
     "Vue",
+    "vue.js",
     "Vimeo",
     "Youtube",
     "Player",
     "component"
   ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/portogabriel/vue-video-wrapper/issues"
   },
