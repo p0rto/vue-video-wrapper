@@ -1,9 +1,11 @@
-import embedVideo from './player.js';
+import videoWrapper from './player.js';
 
-function install(Vue) {
+function install(Vue, options = {}) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component("v-video-wrapper", embedVideo);
+  const { componentId = "video-wrapper" } = options;
+
+  Vue.component(componentId, videoWrapper);
 }
 
 const plugin = {
@@ -20,6 +22,6 @@ if (GlobalVue) {
   GlobalVue.use(plugin);
 }
 
-embedVideo.install = install;
+videoWrapper.install = install;
 
-export default embedVideo;
+export default videoWrapper;
