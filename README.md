@@ -4,7 +4,7 @@ A Vue.js component to wrap embed iframes from Vimeo and Youtube.
 [![npm version](https://img.shields.io/npm/v/vue-video-wrapper)](https://www.npmjs.com/package/vue-video-wrapper)
 [![vue version](https://img.shields.io/badge/vue-2.x-brightgreen)](https://vuejs.org/)
 [![npm downloads](https://img.shields.io/npm/dt/vue-video-wrapper)](https://img.shields.io/npm/dt/vue-video-wrapper)
-[![License: MIT](https://img.shields.io/npm/l/vue-video-wrapper)](https://img.shields.io/npm/l/vue-video-wrapper)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### Intro
 
