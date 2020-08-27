@@ -1,6 +1,7 @@
 import players from './constants/players';
 
 export default {
+  name: 'VideoWrapper',
   functional: true,
   props: {
     player: { 
