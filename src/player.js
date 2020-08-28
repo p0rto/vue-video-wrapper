@@ -19,11 +19,11 @@ export default {
     ...vimeoProps,
     ...youtubeProps
   },
-  render(h, {props, listeners}) {
+  render(h, {data, props, listeners}) {
     const player = players.find(e => e.name == props.player.toUpperCase());
 
     if (player) {
-      return h(player.component, { props: props, on: listeners })
+      return h(player.component, { props: props, ref: data.ref, on: listeners })
     }    
   }
 }
