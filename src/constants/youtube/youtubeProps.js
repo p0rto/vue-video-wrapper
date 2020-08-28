@@ -1,6 +1,7 @@
 export default {
     videoId: {
-        type: String
+      type: [String, Number],
+       required: true
     },
     playerVars: {
       type: Object,

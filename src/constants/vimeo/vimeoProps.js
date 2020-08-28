@@ -1,6 +1,6 @@
 export default {
     videoId: { 
-      type: Number, 
+      type: [String, Number], 
       required: true
     },
     playerHeight: {
