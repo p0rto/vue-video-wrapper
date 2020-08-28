@@ -1,9 +1,9 @@
-# Vue Video Wrapper
+# Vue Video Wrapper :video_camera:
 A Vue.js component to wrap embeded iframes from Vimeo and Youtube.
 
 [![npm version](https://img.shields.io/npm/v/vue-video-wrapper)](https://www.npmjs.com/package/vue-video-wrapper)
 [![vue version](https://img.shields.io/badge/vue-2.x-brightgreen)](https://vuejs.org/)
-[![npm downloads](https://img.shields.io/npm/dt/vue-video-wrapper)](https://img.shields.io/npm/dt/vue-video-wrapper)
+[![npm downloads](https://img.shields.io/npm/dt/vue-video-wrapper)](https://www.npmjs.com/package/vue-video-wrapper)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### Intro
@@ -16,7 +16,7 @@ Using npm:
 
     npm install vue-video-wrapper
 
-## Getting Started
+## Getting Started :heavy_check_mark:
 
 ### Using globally:
 
@@ -57,4 +57,14 @@ The *required prop* `:player` must receive a `String` with the name of the video
 
 <another-component-name :player="'youtube'" :videoId="videoId" />  <!-- if you changed the name of the component -->
 ```
-    
+
+:mag: You can see [here](https://codesandbox.io/s/agitated-volhard-rw2pe) a demo on CodeSandbox.
+
+## Props
+
+### Both players
+
+| Prop | Type | Required | Default | Description
+| --- | --- | --- | --- | --- |
+| player | String | true | | The embeded iframe player.
+| videoId | String, Number | true | | Video identifier.
