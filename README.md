@@ -66,5 +66,39 @@ The *required prop* `:player` must receive a `String` with the name of the video
 
 | Prop | Type | Required | Default | Description
 | --- | --- | --- | --- | --- |
-| player | String | true | | The embeded iframe player.
+| player | String | true | | The embeded iframe player. Acceptable values: "Vimeo" and "Youtube", **case insensitive**.
 | videoId | String, Number | true | | Video identifier.
+
+### Vimeo
+
+| Prop | Type | Required | Default | Description
+| --- | --- | --- | --- | --- |
+| playerHeight | String, Number | false | 320 | Height of the embeded iframe player.
+| playerWidth | String, Number | false | 640 | Width of the embeded iframe player.
+| options | Object | false | {} | Options to pass to the Vimeo instance. See on https://github.com/vimeo/player.js/#embed-options
+| loop | Boolean | false | false | Enable loop on the end of the video.
+| autoplay | Boolean | false | false | The video starts automatically when it's ready.
+| controls | Boolean | false | true | If **false**, all elements in the player (play bar, sharing buttons, etc) will be hidden.
+
+#### Example:
+
+```html
+<video-wrapper :player="'vimeo'" :videoId="videoId" :autoplay="true" :playerHeight="500" />
+```
+
+### Youtube 
+
+| Prop | Type | Required | Default | Description
+| --- | --- | --- | --- | --- |
+| height | String, Number | false | 360 | Height of the embeded iframe player.
+| width | String, Number | false | 640 | Width of the embeded iframe player.
+| resize | Boolean | false | false | Embeded iframe player proportionally scale height with its width.
+| resizeDelay | Number | false | 100 | Delay in ms to before resize.
+| nocookie | Boolean | false | false | If **true** use `https://www.youtube-nocookie.com` as host.
+| fitParent | Boolean | false | false | Use parent's width.
+
+#### Example:
+
+```html
+<video-wrapper :player="'youtube'" :video="videoId" :height="500" :width="800" />
+```
