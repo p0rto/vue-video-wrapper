@@ -21,7 +21,7 @@ export default [
       replace({
         '__VERSION__': pkg.version
       }),
-      buble(),
+      buble({ objectAssign: 'Object.assign' }),
       terser()
     ]
   },
@@ -39,7 +39,7 @@ export default [
       replace({
         '__VERSION__': pkg.version
       }),
-      buble(),
+      buble({ objectAssign: 'Object.assign' }),
       terser()
     ]
   }

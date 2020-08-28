@@ -1,4 +1,6 @@
 import players from './constants/players';
+import vimeoProps from './constants/vimeo/vimeoProps';
+import youtubeProps from './constants/youtube/youtubeProps';
 
 export default {
   functional: true,
@@ -13,7 +15,9 @@ export default {
           }).indexOf(value.toUpperCase()) !== -1;
         } 
     },
-    videoId: { type: [String, Number], required: true }
+    videoId: { type: [String, Number], required: true },
+    ...vimeoProps,
+    ...youtubeProps
   },
   render(h, {props, listeners}) {
     const player = players.find(e => e.name == props.player.toUpperCase());
