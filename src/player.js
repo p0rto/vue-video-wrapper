@@ -1,7 +1,6 @@
 import players from './constants/players';
 
 export default {
-  name: 'VideoWrapper',
   functional: true,
   props: {
     player: { 
@@ -20,7 +19,7 @@ export default {
     const player = players.find(e => e.name == props.player.toUpperCase());
 
     if (player) {
-      return h(player.component, { props: { videoId: props.videoId }, on: listeners })
+      return h(player.component, { props: props, on: listeners })
     }    
   }
 }

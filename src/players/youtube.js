@@ -1,41 +1,13 @@
 import YoutubePlayer from 'youtube-player';
-import { UNSTARTED, ENDED, PLAYING, PAUSED, BUFFERING, CUED } from '../constants/youtubeStates';
+
+import { UNSTARTED, ENDED, PLAYING, PAUSED, BUFFERING, CUED } from '../constants/youtube/youtubeStates';
+import props from '../constants/youtube/youtubeProps';
 
 let videoCount = 0;
 
 export default {
   name: 'YoutubePlayer',
-  props: {
-    videoId: String,
-    playerVars: {
-      type: Object,
-      default: () => ({})
-    },
-    height: {
-      type: [Number, String],
-      default: 360
-    },
-    width: {
-      type: [Number, String],
-      default: 640
-    },
-    resize: {
-      type: Boolean,
-      default: false
-    },
-    resizeDelay: {
-      type: Number,
-      default: 100
-    },
-    nocookie: {
-      type: Boolean,
-      default: false
-    },
-    fitParent: {
-      type: Boolean,
-      default: false
-    }
-  },
+  props: props,
   data () {
     videoCount += 1;
 

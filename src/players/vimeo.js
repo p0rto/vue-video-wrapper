@@ -1,46 +1,14 @@
 import VimeoPlayer from '@vimeo/player';
 import assign from 'object-assign';
 
-import events from '../constants/vimeoEvents';
+import events from '../constants/vimeo/vimeoEvents';
+import props from '../constants/vimeo/vimeoProps';
 
 let videoCount = 0;
 
 export default {
     name: 'VimeoPlayer',
-    props: {
-        videoId: { 
-          type: Number, 
-          required: true
-         },
-        playerHeight: {
-          type: [String, Number],
-          default: 320
-        },
-        playerWidth: {
-          type: [String, Number],
-          default: 640
-        },
-        options: {
-          type: Object,
-          default: () => ({})
-        },
-        videoUrl: {
-          type: String,
-          default: undefined
-        },
-        loop: {
-          type: Boolean,  
-          default: false
-        },
-        autoplay: {
-          type: Boolean,
-          default: false
-        },
-        controls: {
-          type: Boolean,
-          default: true
-        }
-    },
+    props: props,
     methods: {
         update (videoId) {
             return this.player.loadVideo(videoId)
