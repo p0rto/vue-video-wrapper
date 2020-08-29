@@ -6,17 +6,22 @@ A Vue.js component to wrap embeded iframes from Vimeo and Youtube.
 [![npm downloads](https://img.shields.io/npm/dt/vue-video-wrapper)](https://www.npmjs.com/package/vue-video-wrapper)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+### Supported Players
+
+- Vimeo :heavy_check_mark:
+- YouTube :heavy_check_mark:
+
 ### Intro
 
 A simple Vue.js component where you can wrap your **Vimeo** or **Youtube** embeded video and use their events.
 
-## Installation
+## Installation :wrench:
 
 Using npm:
 
     npm install vue-video-wrapper
 
-## Getting Started :heavy_check_mark:
+## Getting Started :rocket:
 
 ### Using globally:
 
@@ -38,7 +43,7 @@ export default {
 }
 ```
 
-## Examples
+## Examples :eyes:
 
 The *required prop* `:player` must receive a `String` with the name of the video player.
 
@@ -60,7 +65,7 @@ The *required prop* `:player` must receive a `String` with the name of the video
 
 :mag: You can see [here](https://codesandbox.io/s/agitated-volhard-rw2pe) a demo on CodeSandbox.
 
-## Props
+## Props :memo:
 
 ### Both players
 
@@ -101,4 +106,154 @@ The *required prop* `:player` must receive a `String` with the name of the video
 
 ```html
 <video-wrapper :player="'youtube'" :video="videoId" :height="500" :width="800" />
+```
+
+## Events :collision:
+
+The component triggers events to notify the changes in the player.
+
+### Vimeo
+
+- play
+- pause
+- ended
+- timeupdate
+- progress
+- seeked
+- texttrackchange
+- cuechange
+- cuepoint
+- volumechange
+- error
+- loaded
+
+#### Example
+
+```html
+<template>
+    <video-wrapper :player="'vimeo'" :videoId="videoId" @play="handlePlay" @pause="handlePause" />
+</template>
+<script>
+export default {
+    data() {
+        return {
+            videoId: "some-video-id"
+        }
+    },
+    methods: {
+        handlePlay() {
+            console.log("playing video...");
+        },
+        handlePause() {
+            console.log("pausing video...");
+        }
+    }
+}
+</script>
+```
+
+### Youtube
+
+- ready
+- ended
+- play
+- pause
+- buffering
+- cued
+- error
+
+#### Example
+
+```html
+<template>
+    <video-wrapper :player="'youtube'" :videoId="videoId" @play="handlePlay" @ended="handleEnded" />
+</template>
+<script>
+export default {
+    data() {
+        return {
+            videoId: "some-video-id"
+        }
+    },
+    methods: {
+        handlePlay() {
+            console.log("playing video...");
+        },
+        handleEnded() {
+            console.log("ended video...");
+        }
+    }
+}
+</script>
+```
+
+## Player :star:
+
+You have access to all api methods from both players through component referencing.
+
+### Vimeo
+
+Check the [Vimeo api methods](https://github.com/vimeo/player.js/#methods)
+
+#### Example
+
+```html
+<template>
+    <video-wrapper ref="player" :player="'vimeo'" :videoId="videoId" />
+</template>
+```
+```javascript
+export default {
+    // ...
+    methods: {
+        playVideo() {
+            this.$refs.player.play();
+        },
+        pauseVideo() {
+            this.$refs.player.pause();
+        }
+    }
+}
+```
+```javascript
+export default {
+    // ...
+    methods: {
+        getDuration() {
+            this.$refs.$player.$player.getDuration().then(function(duration) {
+                // do something with the duration
+            });
+        },
+        getCurrentTime() {
+            this.$refs.$player.$player.getCurrentTime().then(function(seconds) {
+                // do something with the current time
+            });
+        }
+    }
+}
+```
+
+### Youtube
+
+Check the [Youtube api methods](https://developers.google.com/youtube/iframe_api_reference#Functions)
+
+#### Example
+
+```html
+<template>
+    <video-wrapper ref="player" :player="'youtube'" :videoId="videoId" />
+</template>
+```
+```javascript
+export default {
+  // ...
+  methods: {
+    playVideo() {
+        this.$refs.player.player.playVideo();
+    },
+    pauseVideo() {
+        this.$refs.player.player.pauseVideo();
+    }
+  }
+}
 ```
