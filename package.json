@@ -15,13 +15,13 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/portogabriel/vue-video-wrapper/issues"
+    "url": "https://github.com/p0rto/vue-video-wrapper/issues"
   },
-  "homepage": "https://github.com/portogabriel/vue-video-wrapper#readme",
+  "homepage": "https://github.com/p0rto/vue-video-wrapper#readme",
   "author": "Gabriel Romualdo Pôrto <gabrielrporto1903@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/portogabriel/vue-video-wrapper.git"
+    "url": "git+https://github.com/p0rto/vue-video-wrapper.git"
   },
   "scripts": {
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
