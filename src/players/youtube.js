@@ -107,7 +107,7 @@ export default {
     
     const host = this.nocookie ? 'https://www.youtube-nocookie.com' : 'https://www.youtube.com'
 
-    this.player = new YoutubePlayer(this.$el, {
+    this.player = YoutubePlayer(this.$el, {
       host,
       width: this.width,
       height: this.height,

@@ -1,6 +1,6 @@
 {
   "name": "vue-video-wrapper",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A Vue.js component to wrap embed iframes from Vimeo and Youtube.",
   "main": "dist/bundle.umd.js",
   "module": "dist/bundle.esm.js",
@@ -25,9 +25,9 @@
   },
   "scripts": {
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
-    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/bundle.umd.js",
-    "build:es": "rollup --config build/rollup.config.js --format es --file dist/bundle.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/bundle.min.js"
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/bundle.umd.js --bundleConfigAsCjs",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/bundle.esm.js --bundleConfigAsCjs",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/bundle.min.js --bundleConfigAsCjs"
   },
   "dependencies": {
     "@vimeo/player": "^2.12.2",
@@ -36,6 +36,12 @@
     "youtube-player": "^5.5.2"
   },
   "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-buble": "^1.0.2",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-terser": "^0.4.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -49,15 +55,10 @@
     "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^6.0.0",
     "lodash.camelcase": "^4.3.0",
-    "node-sass": "^4.14.1",
-    "rollup": "^2.26.5",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-buble": "^0.19.8",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-terser": "^7.0.0",
+    "rollup": "^3.18.0",
+    "rollup-plugin-polyfill-node": "^0.12.0",
     "rollup-watch": "^4.3.1",
+    "sass": "^1",
     "sass-loader": "^10.0.1",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.12",
